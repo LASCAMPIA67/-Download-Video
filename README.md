@@ -1,93 +1,105 @@
-# 📱 DOWNLOAD – Raccourci iOS
+# 📱 DOWNLOAD – Raccourci iOS  
+Créé par **LASCAMPIA67**
 
-Un raccourci intelligent permettant de télécharger rapidement des vidéos depuis plusieurs plateformes (Twitter/X, YouTube, Facebook, Instagram, TikTok) puis d’importer automatiquement les vidéos téléchargées dans l’app Photos.
+DOWNLOAD est un raccourci iOS conçu pour télécharger facilement des vidéos depuis les principales plateformes (Twitter/X, YouTube, Facebook, Instagram, TikTok). Une fois la vidéo récupérée via les services compatibles, elle est automatiquement importée dans Photos, puis le dossier Downloads est nettoyé.
 
 ---
 
-## 🚀 Fonctionnalités
+## 🔧 Prérequis
 
-- Détection automatique du lien présent dans le presse-papiers  
-- Compatibilité avec :  
-  - Twitter / X  
-  - YouTube et YouTube Shorts  
-  - Facebook  
-  - Instagram  
-  - TikTok (tiktok.com, vm.tiktok.com, vt.tiktok.com)  
-- Redirection vers les plateformes de téléchargement adaptées :  
+### 📲 SnapTik (obligatoire pour TikTok)  
+https://apps.apple.com/app/id6461307222
+
+### 🦁 Brave Browser (fortement recommandé)  
+https://apps.apple.com/app/id1052879175  
+Brave permet une meilleure compatibilité avec les sites de téléchargement, un blocage des traqueurs et un système de téléchargement fiable.
+
+### 🌐 Cloudflare 1.1.1.1 (WARP recommandé)  
+https://apps.apple.com/app/id1423538627
+
+#### ⭐ Pourquoi utiliser Cloudflare WARP ?
+- Améliore la vitesse de connexion  
+- Contourne certains blocages géographiques  
+- Chiffrement DNS → meilleure confidentialité  
+- Réduit les interférences des FAI  
+- Rend les pages de téléchargement plus fiables (SaveFrom, SnapTik, SSSTwitter…)  
+- Optimisation du routage réseau pour des téléchargements plus stables  
+
+---
+
+## 🚀 Fonctionnalités du raccourci
+
+- Détection automatique du lien dans le presse-papiers  
+- Support de : Twitter/X, YouTube, Facebook, Instagram, TikTok  
+- Redirection intelligente vers :  
   - ssstwitter.com  
   - savefrom.net  
   - SnapTik  
-- Surveillance du dossier **Downloads**  
-- Importation automatique dans l’album Photos  
-- Suppression des fichiers téléchargés après traitement  
+- Surveillance automatique du dossier **Downloads**  
+- Importation automatique dans Photos  
+- Suppression des fichiers après traitement  
 
 ---
 
 ## 🧠 Fonctionnement interne
 
-1. **Analyse du presse-papiers**  
-   Le raccourci détecte automatiquement la plateforme en fonction de l’URL copiée.
-
-2. **Ouverture du service adapté**  
-   L’URL est ouverte dans le site de téléchargement compatible avec la plateforme détectée.
-
-3. **Surveillance du dossier Downloads**  
-   Le raccourci vérifie régulièrement l’arrivée de nouveaux fichiers vidéo (`.mp4`, `.mov`, `.m4v`).
-
-4. **Importation dans Photos**  
-   Chaque vidéo détectée est enregistrée dans l’app Photos.
-
-5. **Nettoyage**  
-   Le dossier Downloads est vidé après importation pour éviter l’encombrement.
+1. Analyse de l’URL dans le presse-papiers  
+2. Identification de la plateforme  
+3. Ouverture du service approprié  
+4. Surveillance du dossier Downloads  
+5. Importation automatique dans Photos  
+6. Nettoyage du dossier  
 
 ---
 
-## 🛠️ Correction importante : importer *toutes* les vidéos
+## 🛠️ Importer *toutes* les vidéos (correction obligatoire)
 
-Par défaut, le raccourci ne récupère que **la dernière vidéo téléchargée**, car il utilise quelque chose du type :
+Si seul le dernier fichier se télécharge, voici la solution :  
+Remplace :
 
-Obtenir Premier élément depuis Contenu du dossier  
+```
+Obtenir Premier élément depuis Contenu du dossier
 Enregistrer Élément dans Photos
+```
 
-Pour importer **toutes** les vidéos téléchargées, remplace cette partie par une boucle :
+Par :
 
-Répéter avec chaque Élément dans  
-    Contenu du dossier filtré (mp4, mov, m4v)  
-        Enregistrer Élément dans Photos  
+```
+Répéter avec chaque Élément dans
+    Contenu du dossier filtré (mp4, mov, m4v)
+        Enregistrer Élément dans Photos
 Fin du répéter
+```
 
-✔ Cette modification garantit l’importation de **toutes les vidéos**, pas seulement une.
+✔ Résultat : toutes les vidéos du dossier sont importées.
 
 ---
 
-## 📦 Fichiers présents dans ce dépôt
+## 📦 Fichiers du dépôt
 
-| Fichier | Description |
-|--------|-------------|
+| Fichier | Rôle |
+|--------|------|
 | `DOWNLOAD.shortcut` | Le raccourci complet |
-| `README.md` | Documentation détaillée |
+| `README.md` | Documentation principale |
 | `VERSION.md` | Historique des mises à jour |
-| `PRIVACY.md` | Informations sur la confidentialité |
-| `Screenshots/` | Captures d’écran du raccourci (optionnel) |
+| `PRIVACY.md` | Détails sur la confidentialité |
+| `Screenshots/` | Captures du raccourci |
 
 ---
 
 ## 🔒 Confidentialité
 
-- Aucune collecte de données  
-- Aucun traitement externe en dehors des sites de téléchargement explicitement ouverts  
-- Le raccourci n’accède qu’à :  
-  - votre presse-papiers  
-  - votre dossier Downloads  
-  - l’app Photos  
-- Le traitement est effectué localement sur votre appareil
+- Aucune donnée n’est collectée  
+- Aucun envoi externe imposé (sauf sites de téléchargement choisis)  
+- Tout le traitement se fait en local  
+- Accès uniquement : presse-papiers, dossier Downloads, Photos  
 
 ---
 
 ## 👤 Auteur
 
-- **Compatibilité :** iOS 26.1+  
-- **Créateur :** Votre pseudo GitHub  
-- **Version :** 1.0  
+- Créateur : **LASCAMPIA67**  
+- Compatibilité : iOS 26.1+  
+- Version : 1.0
 """
 
